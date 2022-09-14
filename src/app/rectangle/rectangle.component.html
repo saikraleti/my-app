@@ -1,0 +1,14 @@
+<div class="container">
+<p>rectangle works!</p>
+
+<label>length:</label>
+<input class="form-control" type="number" [(ngModel)]="length">
+<br>
+<label>breadth</label>
+<input  class="form-control" type="number" [(ngModel)]="breadth">
+<br>
+<button class="btn btn-warning"(click)="area()">area</button>
+<button  class="btn btn-success"(click)="perimeter()">perimeter</button>
+<br>
+<h3>result is {{result}} </h3>
+</div>

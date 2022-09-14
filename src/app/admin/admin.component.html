@@ -1,0 +1,26 @@
+<div class="" *ngFor="let admin of admins">
+    <p>{{admin.id}}</p>
+    <p>{{admin.name}}</p>
+    <p>{{admin.username}}</p>
+    <p>{{admin.email}}</p>
+    <p>{{admin.address.street}}</p>
+    <p>{{admin.address.suite}}</p>
+    <p>{{admin.address.city}}</p>
+    <p>{{admin.address.zipcode}}</p>
+
+    <p>{{admin.address.geo.lat}}</p>
+    <p>{{admin.address.geo.lng}}</p>
+    <p>{{admin.phone}}</p>
+    <p>{{admin.website}}</p>
+    <p>{{admin.company.name}}</p>
+    <p>{{admin.company.catchPhrase}}</p>
+    <p>{{admin.company.bs}}</p>
+</div>
+
+<table>
+  <tr>
+    <th>Country</th>
+    <th>Title</th>
+    <th>City</th>
+ </tr>
+
