@@ -41,7 +41,10 @@
             <td>{{Vehicle.fuel}}</td>
             <td>{{Vehicle.manufacturer}}</td>
             <td>{{Vehicle.id}}</td>
-            <td><button (click)="delete(Vehicle.id)">delete</button></td>
+            <td>
+                <button class="btn btn-danger" (click)="delete(Vehicle.id)">delete</button>
+                <button  class="btn btn-success" (click)="view(Vehicle.id)">view</button>
+            </td>
 
 
 

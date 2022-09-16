@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { VehicleService } from './../vehicle.service';
 import { Component, OnInit } from '@angular/core';
 import { Vehicle } from '../vehicle';
@@ -13,7 +14,7 @@ export class VehicleComponent implements OnInit {
   public filterTerm:string = "";
   public vehicles: Vehicle[] = []
 
-  constructor(private _VehicleService: VehicleService) {
+  constructor(private _VehicleService: VehicleService,private router:Router) {
 
     this._VehicleService.getVehicles().subscribe(
     
@@ -70,6 +71,8 @@ export class VehicleComponent implements OnInit {
       }
     )
   }
+  view(id:string){
 
+    this.router.navigateByUrl('/dashboard/vehicledetails'+'/'+id);
 }
-
+}

@@ -1,3 +1,7 @@
+import { NavComponent } from './nav/nav.component';
+import { ProductComponent } from './product/product.component';
+import { CartlistComponent } from './cartlist/cartlist.component';
+import { ParentComponent } from './parent/parent.component';
 import { CreateuserComponent } from './createuser/createuser.component';
 import { NotifyGuard } from './notify.guard';
 import { CreatevehicleComponent } from './createvehicle/createvehicle.component';
@@ -11,7 +15,7 @@ import { PipesComponent } from './pipes/pipes.component';
 import { EmployeesComponent } from './employees/employees.component';
 import { CartComponent } from './cart/cart.component';
 import { StudentRegistrationComponent } from './student-registration/student-registration.component';
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CalculatorComponent } from './calculator/calculator.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -25,31 +29,45 @@ import { TwowaybindingComponent } from './twowaybinding/twowaybinding.component'
 import { RectangleComponent } from './rectangle/rectangle.component';
 import { EventRegistrationComponent } from './event-registration/event-registration.component';
 import { AuthGuard } from './auth.guard';
+import { VehicledetailsComponent } from './vehicledetails/vehicledetails.component';
 const routes: Routes = [
-  { path:'login',component:LoginComponent},
-  {path: 'dashboard',component: DashboardComponent,canActivate:[AuthGuard],children: [
-  { path: 'home', component: HomeComponent },
-  { path: 'calculator', component: CalculatorComponent },
-  { path: 'square', component: SqareComponent },
-  { path: 'databinding', component: DataBindingComponent },
-  { path: 'eventbinding', component: EventbindingComponent },
-  { path: 'twowaybinding', component: TwowaybindingComponent},
-  { path: 'rectangle', component: RectangleComponent},
-  { path: 'event-registration', component: EventRegistrationComponent},
-  { path: 'student-registration', component: StudentRegistrationComponent},
-  { path: 'cart',component :CartComponent},
-  { path: 'employee',component :EmployeesComponent},
-  {path: 'employees',component :EmployeesComponent},
-  { path :'pipes',component :PipesComponent},
-  { path: 'cars',component :CarsComponent},
-  {path:'gpay',component :GpayComponent},
-  { path:'vehicle',component:VehicleComponent},
-  { path: 'account',component:AccountComponent},
-  { path:'item',component:ItemComponent},
-  { path: 'admin',component:AdminComponent},
-  { path: 'createuser',component:CreateuserComponent},
-  { path:'createvehicle',component:CreatevehicleComponent,canDeactivate:[NotifyGuard]},
-],
+  { path: 'login', component: LoginComponent },
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
+    canActivate: [AuthGuard],
+    children: [
+      { path: 'home', component: HomeComponent },
+      { path: 'calculator', component: CalculatorComponent },
+      { path: 'square', component: SqareComponent },
+      { path: 'databinding', component: DataBindingComponent },
+      { path: 'eventbinding', component: EventbindingComponent },
+      { path: 'twowaybinding', component: TwowaybindingComponent },
+      { path: 'rectangle', component: RectangleComponent },
+      { path: 'event-registration', component: EventRegistrationComponent },
+      { path: 'student-registration', component: StudentRegistrationComponent },
+      { path: 'cart', component: CartComponent },
+      { path: 'employee', component: EmployeesComponent },
+      { path: 'employees', component: EmployeesComponent },
+      { path: 'pipes', component: PipesComponent },
+      { path: 'cars', component: CarsComponent },
+      { path: 'gpay', component: GpayComponent },
+      { path: 'vehicle', component: VehicleComponent },
+      { path: 'vehicledetails/:id', component: VehicledetailsComponent },
+      { path: 'account', component: AccountComponent },
+      { path: 'item', component: ItemComponent },
+      { path: 'admin', component: AdminComponent },
+      { path: 'createuser', component: CreateuserComponent },
+      { path: 'parent', component: ParentComponent },
+      { path: 'cartlist', component: CartlistComponent },
+      { path: 'product', component: ProductComponent },
+      { path: 'nav', component: NavComponent },
+      {
+        path: 'createvehicle',
+        component: CreatevehicleComponent,
+        canDeactivate: [NotifyGuard],
+      },
+    ],
   },
   { path: '', component: LoginComponent },
   { path: '**', component: PagenotfoundComponent },
